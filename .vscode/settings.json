@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.tslist": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  "compile-hero.disable-compile-files-on-did-save-code": false,
+  "files.associations": {
+    "iostream": "cpp"
+  }
+}
