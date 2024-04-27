@@ -1,12 +1,12 @@
 import { getDatabase, ref, set } from "firebase/database";
 import _ from "lodash";
 import { useEffect, useReducer, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
-import useQuestions from "../../hooks/useQuestions";
-import Answers from "../Answers";
-import MiniPlayer from "../MiniPlayer";
-import ProgressBar from "../ProgressBar";
+import { useNavigate, useParams } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import useQuestions from "../hooks/useQuestions";
+import Answers from "../components/Answers";
+import MiniPlayer from "../components/MiniPlayer";
+import ProgressBar from "../components/ProgressBar";
 
 const initialState = null;
 
@@ -37,10 +37,7 @@ export default function Quiz() {
 
   const [qna, dispatch] = useReducer(reducer, initialState);
   const { currentUser } = useAuth();
-  const history = useHistory();
-  const { location } = history;
-  const { state } = location;
-  const { videoTitle } = state;
+  const history = useNavigate();
 
   useEffect(() => {
     dispatch({
@@ -83,8 +80,7 @@ export default function Quiz() {
       [id]: qna,
     });
 
-    history.push({
-      pathname: `/result/${id}`,
+    history("/result/${id}", {
       state: {
         qna,
       },
@@ -114,7 +110,7 @@ export default function Quiz() {
             submit={submit}
             progress={percentage}
           />
-          <MiniPlayer id={id} title={videoTitle} />
+          <MiniPlayer id={id}  />
         </>
       )}
     </>
