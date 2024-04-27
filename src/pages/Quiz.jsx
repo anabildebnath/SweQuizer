@@ -37,7 +37,7 @@ export default function Quiz() {
 
   const [qna, dispatch] = useReducer(reducer, initialState);
   const { currentUser } = useAuth();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch({
@@ -72,7 +72,6 @@ export default function Quiz() {
   // submit quiz
   async function submit() {
     const { uid } = currentUser;
-
     const db = getDatabase();
     const resultRef = ref(db, `result/${uid}`);
 
@@ -80,7 +79,7 @@ export default function Quiz() {
       [id]: qna,
     });
 
-    history("/result/${id}", {
+    navigate(`/result/${id}`, {
       state: {
         qna,
       },
@@ -110,7 +109,7 @@ export default function Quiz() {
             submit={submit}
             progress={percentage}
           />
-          <MiniPlayer id={id}  />
+          <MiniPlayer id={id} />
         </>
       )}
     </>

@@ -8,7 +8,6 @@ export default function useAnswers(videoID) {
 
   useEffect(() => {
     async function fetchAnswers() {
-      // database related works
       const db = getDatabase();
       const answerRef = ref(db, "answers/" + videoID + "/questions");
       const answerQuery = query(answerRef, orderByKey());
@@ -16,7 +15,6 @@ export default function useAnswers(videoID) {
       try {
         setError(false);
         setLoading(true);
-        // request firebase database
         const snapshot = await get(answerQuery);
         setLoading(false);
         if (snapshot.exists()) {

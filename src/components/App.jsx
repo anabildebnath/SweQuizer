@@ -9,6 +9,7 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import Quiz from "../pages/Quiz";
 import Home from "../pages/Home";
+import Result from "../pages/Result";
 
 function App() {
   return (
@@ -16,16 +17,18 @@ function App() {
       <AuthProvider>
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route element={<PrivateRoute />}>
+              <Route path="/" element={<Home />} />
+            </Route>
 
             <Route element={<PublicRoute />}>
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
             </Route>
             <Route element={<PrivateRoute />}>
-              <Route path="/quiz/:id"  element={<Quiz/>}/>
+              <Route path="/quiz/:id" element={<Quiz />} />
+              <Route path="/result/:id" element={<Result />} />
             </Route>
-        
           </Routes>
         </Layout>
       </AuthProvider>
