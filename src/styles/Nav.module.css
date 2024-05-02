@@ -1,15 +1,14 @@
-/* nav component */
 .nav {
   display: flex;
-  background-color: #fff;
+  background-color: black;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   border-bottom: 1px solid #e5e5e5;
   z-index: 1;
+  align-items: center;
 }
-
 .nav ul {
   width: 50%;
   height: 60px;
@@ -17,10 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.nav ul:first-child {
-  margin-left: 30px;
 }
 
 .nav ul li {
@@ -33,10 +29,12 @@
   align-items: center;
 }
 
-.nav .brand h3 {
-  font-size: 18px;
+.nav .brand h1 {
+  font-size: 16px;
   line-height: 19px;
-  font-weight: 700;
+  font-weight: 500;
+  color: white;
+  padding-left: 10px;
 }
 
 .nav .brand img {
@@ -49,4 +47,9 @@
   .nav .brand h3 {
     display: none;
   }
+}
+
+.alignment{
+  margin-left: 120px;
+  margin-right: 120px;
 }

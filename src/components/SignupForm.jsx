@@ -5,6 +5,10 @@ import Button from "./Button";
 import Checkbox from "./Checkbox";
 import Form from "./Form";
 import TextInput from "./TextInput";
+import classes from "../styles/SignupForm.module.css";
+import companyImage from "../assets/images/company logo.svg";
+import googleImage from "../assets/images/google.png";
+import githubImage from "../assets/images/github.svg";
 
 export default function SignupForm() {
   const [username, setUsername] = useState("");
@@ -12,7 +16,6 @@ export default function SignupForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agree, setAgree] = useState("");
-
   const [error, setError] = useState();
   const [loading, setLoading] = useState();
 
@@ -21,7 +24,6 @@ export default function SignupForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // do validation
     if (password !== confirmPassword) {
       return setError("Passwords don't match!");
     }
@@ -39,7 +41,33 @@ export default function SignupForm() {
   }
 
   return (
-    <Form style={{ height: "500px" }} onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
+      <div className={classes.loginHeader}>
+        <div className={classes.headerTitle}>
+          <img src={companyImage} alt="" />
+          <h1>SweQuizer</h1>
+        </div>
+        <div className={classes.headerName}>
+          <h1>Login to your Account</h1>
+          <p>Welcome back! Select method to Signup:</p>
+        </div>
+        <div className={classes.headerAccounts}>
+          <div className={classes.accountButton}>
+            <img src={googleImage} alt="" />
+            <button on>Google </button>
+          </div>
+          <div className={classes.accountButton}>
+            <img src={githubImage} alt="" />
+            <button>Github</button>
+          </div>
+        </div>
+        <div className={classes.separator}>
+          <span className={classes.separator_text}>
+            or continue with your email
+          </span>
+        </div>
+      </div>
+
       <TextInput
         type="text"
         placeholder="Enter name"
@@ -76,21 +104,22 @@ export default function SignupForm() {
         onChange={(e) => setConfirmPassword(e.target.value)}
       />
 
-      <Checkbox
+      <Checkbox className={classes.checkbox}
         required
         text="I agree to the Terms &amp; Conditions"
         value={agree}
         onChange={(e) => setAgree(e.target.value)}
       />
+      <div className={classes.lowersec}>
+        <Button disabled={loading} type="submit">
+          <span>Submit Now</span>
+        </Button>
 
-      <Button disabled={loading} type="submit">
-        <span>Submit Now</span>
-      </Button>
+        {error && <p className="error">{error}</p>}
 
-      {error && <p className="error">{error}</p>}
-
-      <div className="info">
-        Already have an account? <Link to="/login">Login</Link> instead.
+        <div className="info">
+          Already have an account? <Link to="/login">Login</Link> instead.
+        </div>
       </div>
     </Form>
   );

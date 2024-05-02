@@ -5,7 +5,7 @@ import classes from "../styles/Account.module.css";
 export default function Account() {
   const { currentUser, logout } = useAuth();
   return (
-    <div className={classes.account}>
+    <div className={`${classes.account} ${classes.alignment}`}>
       {currentUser ? (
         <>
           <span className="material-icons-outlined" title="Account">
@@ -23,8 +23,14 @@ export default function Account() {
         </>
       ) : (
         <>
-          <Link to="/signup">Signup</Link>
-          <Link to="/login">Login</Link>
+          <Link to="/signup" className={classes.account_link}>
+          <button> Signup</button>
+           
+          </Link>
+          <Link to="/login" className={classes.account_link}>
+          <button> Login</button>
+           
+          </Link>
         </>
       )}
     </div>

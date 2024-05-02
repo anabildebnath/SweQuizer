@@ -1,0 +1,16 @@
+.footer {
+  background-color: black;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  margin-top: 7rem;
+}
+
+.footer p,h1{
+    color: white;
+}

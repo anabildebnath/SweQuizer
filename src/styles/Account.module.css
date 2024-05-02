@@ -4,10 +4,47 @@
   gap: 0.5rem;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 30px;
   font-size: 12px;
+  color: white;
 }
 
 .account > span:last-child {
   cursor: pointer;
+}
+
+.account_link{
+  color: white;
+  padding-left: 15px;
+}
+
+.alignment{
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.account button{
+background-color:#4C5FD5;
+color: white;
+height: 30px;
+width: 80px;
+border: none;
+border-radius: 6px;
+
+}
+
+.account button:hover{
+  background-color: #2dbf64;
+  transform: scale(1.1);
+  transition: all ease-out;
+  transition-duration: 0.3s;
+
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }

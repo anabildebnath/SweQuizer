@@ -1,0 +1,34 @@
+.slidingBarContainer {
+min-height: 100%;
+  }
+  
+  .sliding-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    animation: slideIn 2s ease-in-out infinite;
+  }
+  
+  .sliding_bar img {
+    margin-top: 2rem;
+    width: auto;
+    height: 35vh;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  

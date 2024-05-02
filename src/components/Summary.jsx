@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import successImage from "../assets/images/success.png";
+import successImage from "../assets/images/student-male.svg";
 import useFetch from "../hooks/useFetch";
 import classes from "../styles/Summary.module.css";
 

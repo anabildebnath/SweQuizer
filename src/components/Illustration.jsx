@@ -1,10 +1,18 @@
-import signupImage from "../assets/images/signup.svg";
+import React from "react";
+import signupImage from "../assets/images/login.svg";
 import classes from "../styles/Illustration.module.css";
+import SlidingBar from "./SlidingBar";
 
 export default function Illustration() {
   return (
-    <div className={classes.illustration}>
-      <img src={signupImage} alt="Signup" />
+    <div className={classes.illustrationContainer}>
+      <div className={classes.illustration}>
+      <SlidingBar />
+      </div>
+      <div className={classes.illustrationTitle}>
+        <h1>Connect with any account to get started</h1>
+        <p>Get enrolled to participate in all the upcoming term tests</p>
+      </div>
     </div>
   );
 }
