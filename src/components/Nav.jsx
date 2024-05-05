@@ -14,7 +14,7 @@ export default function Nav() {
               name="bar-chart-alt-2"
               color="white"
             ></box-icon>
-            <h1>SWE | Term Quizes</h1>
+            <h1>SweQuizer</h1>
           </Link>
         </li>
       </ul>

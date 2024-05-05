@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  background-color: black;
+  background-color: white;
   position: fixed;
   left: 0;
   right: 0;
@@ -8,6 +8,10 @@
   border-bottom: 1px solid #e5e5e5;
   z-index: 1;
   align-items: center;
+  height: 12vh;
+  border-bottom-color: #eaeaea;
+  border-bottom-style: solid;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
 }
 .nav ul {
   width: 50%;
@@ -16,7 +20,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .nav ul li {
@@ -30,17 +33,17 @@
 }
 
 .nav .brand h1 {
-  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
   line-height: 19px;
   font-weight: 500;
-  color: white;
+  color: rgb(48, 48, 48);
   padding-left: 10px;
 }
 
 .nav .brand img {
   width: 32px;
   margin-right: 20px;
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -49,7 +52,6 @@
   }
 }
 
-.alignment{
-  margin-left: 120px;
-  margin-right: 120px;
+.alignment {
+ margin-left: 15rem;
 }
