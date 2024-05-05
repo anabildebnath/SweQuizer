@@ -37,6 +37,6 @@ export default function useQuestions(videoID) {
   return {
     loading,
     error,
-    questions,
+    questions
   };
 }

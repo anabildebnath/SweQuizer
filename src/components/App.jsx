@@ -11,6 +11,7 @@ import Quiz from "../pages/Quiz";
 import Home from "../pages/Home";
 import Result from "../pages/Result";
 import Landing from "../pages/Landing";
+import Videos from "../components/Videos";
 
 function App() {
   return (
@@ -19,12 +20,13 @@ function App() {
         <Layout>
           <Routes>
             <Route element={<PublicRoute />}>
-            <Route path="/landing" element={<Landing />} />
+              <Route path="/landing" element={<Landing />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
             </Route>
             <Route element={<PrivateRoute />}>
-            <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/videos/:topicName" element={<Videos />} />
               <Route path="/quiz/:id" element={<Quiz />} />
               <Route path="/result/:id" element={<Result />} />
             </Route>

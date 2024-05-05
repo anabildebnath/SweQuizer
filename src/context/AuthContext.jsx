@@ -46,9 +46,36 @@ export function AuthProvider({ children }) {
   }
 
   // login function
-  function login(email, password) {
+  async function login(email, password) {
     const auth = getAuth();
-    return signInWithEmailAndPassword(auth, email, password);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      if (error.code === "auth/invalid-credential") {
+        throw new Error(
+          "Account doesn't exist. Please sign up to create an account."
+        );
+      } else if (error.code === "auth/invalid-email") {
+        throw new Error(
+          "Invalid email format. Please enter a valid email address."
+        );
+      } else if (error.code === "auth/too-many-requests") {
+        throw new Error(
+          "Too many wrong attempts,access is temporarily locked."
+        );
+      } else if (error.code === "auth/invalid-email") {
+        throw new Error(
+          "Invalid email format. Please enter a valid email address."
+        );
+      } else if (error.code === "auth/invalid-password") {
+        throw new Error(
+          "Incorrect password. Please check your password and try again."
+        );
+      } else {
+        // throw new Error("Failed to login. Please try again later.");
+        throw error;
+      }
+    }
   }
 
   // logout function

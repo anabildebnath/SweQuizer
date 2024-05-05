@@ -7,6 +7,9 @@
   font-size: 12px;
   color: white;
 }
+.account span{
+  color: white;
+}
 
 .account > span:last-child {
   cursor: pointer;

@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { signInWithPopup, GoogleAuthProvider,GithubAuthProvider } from "firebase/auth";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
 import Button from "./Button";
 import Form from "./Form";
 import TextInput from "./TextInput";
@@ -20,13 +24,14 @@ export default function LoginForm() {
   const navigate = useNavigate();
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
+  const [socialLoginClicked, setSocialLoginClicked] = useState(false);
 
   async function handleGoogleSignIn() {
     try {
       setError("");
       setLoading(true);
-      const result = await signInWithPopup(auth, googleProvider);
-
+      setSocialLoginClicked(true);
+      await signInWithPopup(auth, googleProvider);
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -39,7 +44,8 @@ export default function LoginForm() {
     try {
       setError("");
       setLoading(true);
-      await signInWithPopup(auth, githubProvider); // Use GithubAuthProvider for GitHub sign-in
+      setSocialLoginClicked(true);
+      await signInWithPopup(auth, githubProvider);
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -50,15 +56,17 @@ export default function LoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    try {
-      setError("");
-      setLoading(true);
-      await login(email, password);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-      setLoading(false);
-      setError("Failed to login!");
+    if (!socialLoginClicked) {
+      try {
+        setError("");
+        setLoading(true);
+        await login(email, password);
+        navigate("/");
+      } catch (err) {
+        console.log(err.message);
+        setError(err.message);
+        setLoading(false);
+      }
     }
   }
 
@@ -76,11 +84,11 @@ export default function LoginForm() {
         <div className={classes.headerAccounts}>
           <div className={classes.accountButton}>
             <img src={googleImage} alt="" />
-            <button onClick={handleGoogleSignIn}>Google </button>
+            <button type="button" onClick={handleGoogleSignIn}>Google </button>
           </div>
           <div className={classes.accountButton}>
             <img src={githubImage} alt="" />
-            <button onClick={handleGithubSignIn}>Github</button>
+            <button type="button" onClick={handleGithubSignIn}>Github</button>
           </div>
         </div>
         <div className={classes.separator}>
@@ -95,7 +103,7 @@ export default function LoginForm() {
           type="text"
           placeholder="Enter email"
           icon="email"
-          // required
+          required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -104,7 +112,7 @@ export default function LoginForm() {
           type="password"
           placeholder="Enter password"
           icon="lock"
-          // required
+          required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -118,11 +126,13 @@ export default function LoginForm() {
           <label className={classes.pass}>Forgot Password?</label>
         </div>
 
-        <Button type="submit" disabled={loading}>
+        <Button type="submit" onClick={handleSubmit} disabled={loading}>
           <span>Log In</span>
         </Button>
 
-        {error && <p className="error">{error}</p>}
+        <div className={classes.errorContainer}>
+          {error && <p className="error">{error}</p>}
+        </div>
 
         <div>
           Don't have an account? <Link to="/signup">Signup</Link> instead.

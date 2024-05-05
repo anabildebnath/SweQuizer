@@ -96,6 +96,7 @@ export default function Quiz() {
       {error && <div>There was an error!</div>}
       {!loading && !error && qna && qna.length > 0 && (
         <>
+       
           <h1>{qna[currentQuestion].title}</h1>
           <h4>Question can have multiple answers</h4>
           <Answers

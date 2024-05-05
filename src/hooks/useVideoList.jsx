@@ -1,80 +1,46 @@
-import {
-  get,
-  getDatabase,
-  orderByKey,
-  query,
-  ref,
-  startAt,
-} from "firebase/database";
+import { get, getDatabase, orderByKey, query, ref } from "firebase/database";
 import { useEffect, useState } from "react";
 
-export default function useVideoList(page, sectionName) {
+
+// Function to fetch videos based on sectionName
+async function fetchVideos(sectionName) {
+  const db = getDatabase();
+  try {
+    const snapshot = await get(ref(db, `videos/${sectionName}`));
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      return [];
+    }
+  } catch (error) {
+    console.error("Error fetching videos:", error);
+    throw error;
+  }
+}
+
+export default function useVideoList(sectionName) {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [videos, setVideos] = useState([]);
+  //hasmore is supposed to show if there are any more videos 
   const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    async function fetchVideos() {
-      if (!hasMore) {
-        // If hasMore is false, no need to fetch more videos
-        return;
-      }
-
-      const db = getDatabase();
-      const videosRef = ref(db, "videos");
-      const videoQuery = query(videosRef, orderByKey(), startAt("" + page));
-
-      try {
-        setError(false);
-        setLoading(true);
-        const snapshot = await get(videoQuery);
-        setLoading(false);
-        if (snapshot.exists()) {
-          const fetchedVideos = Object.values(snapshot.val()).filter((video) =>
-            video.title.toLowerCase().includes(sectionName.toLowerCase())
-          );
-
-          if (fetchedVideos.length === 0) {
-            setHasMore(false); // No more videos to load
-            setLoading(false);
-          }
-
-          if (page === 1) {
-            setVideos(fetchedVideos);
-          } else {
-            setVideos((prevVideos) => {
-              const uniqueVideos = [];
-              prevVideos.forEach((prevVideo) => {
-                if (
-                  !fetchedVideos.some(
-                    (video) => video.youtubeID === prevVideo.youtubeID
-                  )
-                ) {
-                  uniqueVideos.push(prevVideo);
-                }
-              });
-              return [...uniqueVideos, ...fetchedVideos];
-            });
-          }
+    setLoading(true);
+    fetchVideos(sectionName)
+      .then((data) => {
+        if (data) {
+          setVideos(data);
         } else {
-          setHasMore(false); // No more videos to load
-          setLoading(false);
+          setVideos([]);
         }
-      } catch (err) {
-        console.log(err);
         setLoading(false);
-        setError(true);
-      }
-    }
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, [sectionName]);
 
-    fetchVideos();
-  }, [page, sectionName, hasMore]); // Including hasMore in the dependency array
-
-  return {
-    loading,
-    error,
-    videos,
-    hasMore,
-  };
+  return { loading, error, videos, hasMore };
 }

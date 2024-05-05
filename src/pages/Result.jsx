@@ -9,7 +9,6 @@ export default function Result() {
   const location = useLocation();
   const { state } = location;
   const qna = state ? state.qna : null;
-
   const { loading, error, answers } = useAnswers(id);
 
   function calculate() {
