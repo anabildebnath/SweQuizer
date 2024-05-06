@@ -1,5 +1,4 @@
 import React from "react";
-import signupImage from "../assets/images/login.svg";
 import classes from "../styles/Illustration.module.css";
 import SlidingBar from "./SlidingBar";
 
