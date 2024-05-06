@@ -1,4 +1,4 @@
-import { get, getDatabase, orderByKey, query, ref } from "firebase/database";
+import { get, getDatabase, ref } from "firebase/database";
 import { useEffect, useState } from "react";
 
 
@@ -33,6 +33,7 @@ export default function useVideoList(sectionName) {
           setVideos(data);
         } else {
           setVideos([]);
+          setHasMore(false);
         }
         setLoading(false);
       })

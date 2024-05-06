@@ -6,7 +6,7 @@ import { getDatabase, ref, query, orderByKey, get } from "firebase/database";
 import classes from "../styles/Videos.module.css"
 
 export default function Videos() {
-  const { topicName } = useParams(); // Use useParams to get the topicName from the URL
+  const { topicName } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [videos, setVideos] = useState([]);
@@ -28,6 +28,7 @@ export default function Videos() {
           setVideos(Object.values(snapshot.val()));
         } else {
           setVideos([]);
+          setHasMore(false);
         }
 
         setLoading(false);
