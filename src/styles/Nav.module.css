@@ -1,5 +1,7 @@
 .nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   position: fixed;
   left: 0;
@@ -13,8 +15,13 @@
   border-bottom-style: solid;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
 }
-.nav ul {
+.navChild{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+}
+.nav ul {
   height: 60px;
   list-style: none;
   display: flex;
@@ -24,6 +31,9 @@
 
 .nav ul li {
   font-weight: 600;
+  height: 3rem;
+  width: 5rem;
+  -webkit-box-align: center
 }
 
 .nav .brand {
@@ -42,7 +52,7 @@
 }
 
 .nav .brand img {
-  width: 32px;
+  width: 4rem;
   margin-right: 20px;
 }
 
@@ -54,4 +64,14 @@
 
 .alignment {
  margin-left: 15rem;
+}
+
+.navChild ul{
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.navChild ul li:hover{
+background-color: #2b7180;
+color: white;
 }
