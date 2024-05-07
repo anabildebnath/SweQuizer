@@ -10,11 +10,6 @@ export default function Nav() {
         <ul className={classes.alignment}>
           <li>
             <Link to="/" className={classes.brand}>
-              <box-icon
-                type="solid"
-                name="bar-chart-alt-2"
-                color="white"
-              ></box-icon>
               <h1>SweQuizer</h1>
             </Link>
           </li>
@@ -24,22 +19,22 @@ export default function Nav() {
         <ul>
           <li>
             <Link>
-              <p>Term Tests</p>
+              <p className="navText">Term Tests</p>
             </Link>
           </li>
           <li>
             <Link>
-              <p>Tutorials</p>
+              <p className="navText">Tutorials</p>
             </Link>
           </li>
           <li>
             <Link>
-              <p>Results</p>
+              <p className="navText">Results</p>
             </Link>
           </li>
           <li>
             <Link>
-              <p>Contact Faculty</p>
+              <p className="navText">Faculties</p>
             </Link>
           </li>
   

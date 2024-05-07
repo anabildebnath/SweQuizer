@@ -10,6 +10,10 @@
 .account span {
   color: rgb(0, 0, 0);
 }
+.account img{
+  width: 2rem;
+  height: auto;
+}
 
 .account > span:last-child {
   cursor: pointer;

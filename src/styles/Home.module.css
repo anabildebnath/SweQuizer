@@ -1,9 +1,58 @@
-.alignment{
-    padding: 10rem 17rem;
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+.alignment {
+  padding: 10rem 17rem;
+  display: flex;
+  flex-direction: column;
 }
-.alignment >*{
-    width: 30%;
+.topicSection {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.topicSection > * {
+  width: 30%;
+}
+.introSection1{
+  margin-bottom: 10vh;
+}
+/* .introSection1 h1{
+  color: black;
+} */
+.introH1 {
+  opacity: 0;
+  color: #88B6A1;;
+  font-family: "Montserrat", Sans-serif;
+  font-size: 68px;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+.introH3{
+  color:#2B7180;
+  font-family: "Montserrat", Sans-serif;
+  font-size: 2.9rem;
+  line-height: 1.5em;
+  margin-bottom: 3vh;
+
+}
+.introP{
+  color: #2D2D2D;
+  font-size: 1.2rem;
+  padding: 0;
+
+}
+.fadeIn {
+    opacity: 1;
+    animation: fadeInAnimation 1s ease-in-out forwards;
+  }
+@keyframes fadeIn {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+}
+
+.animate h1{
+  color: #2D2D2D;
 }

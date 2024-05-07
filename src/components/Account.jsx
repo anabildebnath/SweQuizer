@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import classes from "../styles/Account.module.css";
+import accImage from "../assets/images/account logo.svg";
 
 export default function Account() {
   const { currentUser, logout } = useAuth();
   return (
-    <div className={`${classes.account} ${classes.alignment}`}>
+    <div className={classes.account}>
       {currentUser ? (
         <>
-          <span className="material-icons-outlined" title="Account">
+          {/* <span className="material-icons-outlined" title="Account">
             account_circle
-          </span>
+          </span> */}
+          <img src={accImage} alt="" />
+
           <span>{currentUser.displayName}</span>
           <span
             className="material-icons-outlined"
@@ -24,12 +27,10 @@ export default function Account() {
       ) : (
         <>
           <Link to="/signup" className={classes.account_link}>
-          <button> Signup</button>
-           
+            <button> Signup</button>
           </Link>
           <Link to="/login" className={classes.account_link}>
-          <button> Login</button>
-           
+            <button> Login</button>
           </Link>
         </>
       )}
