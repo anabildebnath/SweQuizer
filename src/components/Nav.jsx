@@ -1,7 +1,7 @@
+import "boxicons";
 import { Link } from "react-router-dom";
 import classes from "../styles/Nav.module.css";
 import Account from "./Account";
-import "boxicons";
 
 export default function Nav() {
   return (
@@ -22,10 +22,27 @@ export default function Nav() {
       </div>
       <div className={classes.navChild}>
         <ul>
-          <li>Upcoming Tests</li>
-          <li>Tutorials</li>
-          <li>Results</li>
-          <li>Contact Faculty</li>
+          <li>
+            <Link>
+              <p>Term Tests</p>
+            </Link>
+          </li>
+          <li>
+            <Link>
+              <p>Tutorials</p>
+            </Link>
+          </li>
+          <li>
+            <Link>
+              <p>Results</p>
+            </Link>
+          </li>
+          <li>
+            <Link>
+              <p>Contact Faculty</p>
+            </Link>
+          </li>
+  
           <Account />
         </ul>
       </div>
