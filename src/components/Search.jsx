@@ -16,7 +16,7 @@ export default function Search() {
       >
         <input
           type="text"
-          placeholder="Search upcoming term tests"
+          placeholder="Search upcoming term tests (beta version-fixing issues)"
           onFocus={() => setInputFocused(true)}
           onBlur={() => setInputFocused(false)}
         />

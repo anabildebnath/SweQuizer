@@ -12,6 +12,7 @@ import Home from "../pages/Home";
 import Result from "../pages/Result";
 import Landing from "../pages/Landing";
 import Videos from "../components/Videos";
+import Beta from "../pages/Beta";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/landing" element={<Landing />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/beta" element={<Beta />} />
             </Route>
             <Route element={<PrivateRoute />}>
               <Route path="/" element={<Home />} />
