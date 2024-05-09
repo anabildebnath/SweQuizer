@@ -22,7 +22,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
 }
 .nav .brand h1 {
   font-family: "Montserrat", sans-serif;
@@ -48,17 +48,27 @@ nav ul li {
   text-align: center;
 }
 p {
- padding: 1rem;
+  padding: 1rem;
 }
 .navChild ul li:hover {
   background-color: #2b7180;
+  transition: background-color .5s ease-in-out;
 }
 
 .navChild ul li:hover p {
   color: white;
 }
+
+.navChild ul li.active {
+  background-color: #2b7180;
+  color: white;
+  border: 1px solid #2b7180;
+}
+
+
 @media only screen and (max-width: 600px) {
   .nav .brand h3 {
     display: none;
   }
 }
+
