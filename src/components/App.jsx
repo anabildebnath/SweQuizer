@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import "../styles/App.css";
@@ -15,6 +15,9 @@ import Beta from "../pages/Beta";
 import About from "../pages/About";
 
 function App() {
+  useEffect(() => {
+    document.title = "SweQuizer"; // Set your desired title here
+  }, []);
   return (
     <Router>
       <AuthProvider>

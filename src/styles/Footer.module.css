@@ -10,6 +10,10 @@
   padding-right: 7rem;
   margin-top: 7rem;
 }
+.element{
+  display: flex;
+  flex-direction: column;
+}
 
 .footer p,h1{
     color: white;

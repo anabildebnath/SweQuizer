@@ -1,18 +1,35 @@
 import classes from "../styles/Footer.module.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <div className={classes.footer}>
       <div className={classes.element}>
         <h1 className={classes.title}>IICT</h1>
-        <p>SWE Quiz App</p>
+        <Link
+          to="https://github.com/anabildebnath/SweQuizer/tree/master"
+          target="_blank"
+        >
+          SWE Quiz App
+        </Link>
       </div>
       <div className={classes.element}>
         <h1 className={classes.title}>Resources</h1>
-        <p>Blog</p>
-        <p>Help Center</p>
-        <p>Release Notes</p>
-        <p>Status</p>
+        <Link to="" target="_blank">
+          Blog
+        </Link>
+        <Link to="" target="_blank">
+          Help Center
+        </Link>
+        <Link
+          to="https://github.com/anabildebnath/SweQuizer/tree/master"
+          target="_blank"
+        >
+          Release Notes
+        </Link>
+        <Link to="" target="_blank">
+          Status
+        </Link>
       </div>
       <div className={classes.element}>
         <h1 className={classes.title}>Community</h1>
@@ -36,10 +53,15 @@ export default function Footer() {
         </div>
       </div>
       <div className={classes.element}>
-        <img src="" alt="" />
-        <p>© Copyright 2022</p>
-        <p>IICT Web Apps Design Inc.</p>
-        <p>All rights reserved</p>
+        <Link to="https://www.termsfeed.com/blog/website-copyright-law/" target="_blank">
+          © Copyright 2024
+        </Link>
+        <Link to="https://anabildebnath.netlify.app/" target="_blank">
+          Anabil Debnath
+        </Link>
+        <Link to="https://www.hostpapa.com/blog/business/a-website-owners-guide-to-copyright/" target="_blank">
+          All rights reserved
+        </Link>
       </div>
     </div>
   );

@@ -134,6 +134,12 @@
 .loginInput button span {
   color: white;
 }
+.loginInput a{
+  color: #2a2a2b;
+}
+.loginInput a:hover{
+  color: rgb(56, 120, 238);
+}
 .errorContainer {
   max-width: 21rem;
   margin-bottom: 0.6rem;

@@ -42,13 +42,15 @@ export default function SignupForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div className={classes.loginHeader}>
+
+    <div className={classes.formContainer}>
+            <div className={classes.loginHeader}>
         <div className={classes.headerTitle}>
           <img src={companyImage} alt="" />
           <h1>SweQuizer</h1>
         </div>
         <div className={classes.headerName}>
-          <h1>Login to your Account</h1>
+          <h1>Signup to create your Account</h1>
           <p>Welcome back! Select method to Signup:</p>
         </div>
         <div className={classes.headerAccounts}>
@@ -68,59 +70,65 @@ export default function SignupForm() {
         </div>
       </div>
 
-      <TextInput
-        type="text"
-        placeholder="Enter name"
-        icon="person"
-        required
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
+      <div className={classes.loginInput}>
+        <TextInput
+          type="text"
+          placeholder="Enter name"
+          icon="person"
+          required
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-      <TextInput
-        type="text"
-        required
-        placeholder="Enter email"
-        icon="alternate_email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <TextInput
+          type="text"
+          required
+          placeholder="Enter email"
+          icon="alternate_email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <TextInput
-        type="password"
-        required
-        placeholder="Enter password"
-        icon="lock"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <TextInput
+          type="password"
+          required
+          placeholder="Enter password"
+          icon="lock"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <TextInput
-        type="password"
-        required
-        placeholder="Confirm password"
-        icon="lock_clock"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-      />
+        <TextInput
+          type="password"
+          required
+          placeholder="Confirm password"
+          icon="lock_clock"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
 
-      <Checkbox className={classes.checkbox}
-        required
-        text="I agree to the Terms &amp; Conditions"
-        value={agree}
-        onChange={(e) => setAgree(e.target.value)}
-      />
-      <div className={classes.lowersec}>
-        <Button disabled={loading} type="submit">
-          <span>Submit Now</span>
-        </Button>
+        <Checkbox
+          className={classes.checkbox}
+          required
+          text="I agree to the Terms &amp; Conditions"
+          value={agree}
+          onChange={(e) => setAgree(e.target.value)}
+        />
+        <div className={classes.lowersec}>
+          <Button disabled={loading} type="submit">
+            <span>Submit Now</span>
+          </Button>
 
-        {error && <p className="error">{error}</p>}
+          {error && <p className="error">{error}</p>}
 
-        <div className="info">
-          Already have an account? <Link to="/login">Login</Link> instead.
+          <div className="info">
+            Already have an account? <Link to="/login">Login</Link> instead.
+          </div>
         </div>
       </div>
+    </div>
+
+
     </Form>
   );
 }

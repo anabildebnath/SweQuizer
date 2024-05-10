@@ -1,3 +1,7 @@
+.formContainer{
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
 .loginHeader {
   display: flex;
   flex-direction: column;
@@ -110,5 +114,14 @@
   font-size: .9rem;
   color: #5c5c5c;
 }
-
-
+.loginInput button {
+  width: 100%;
+  background-color: rgb(20, 108, 223);
+  margin-bottom: 1rem;
+}
+.loginInput a{
+  color: #2a2a2b;
+}
+.loginInput a:hover{
+  color: rgb(56, 120, 238);
+}
