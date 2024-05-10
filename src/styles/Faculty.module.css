@@ -1,0 +1,56 @@
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 18vw;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15vh;
+    overflow: hidden;
+    padding: 0;
+  }
+  .element {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+  }
+  .element img {
+    width: 10rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    gap: 1rem;
+  }
+  .title p {
+    font-weight: 300;
+  }
+  .learnMore {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .learnMore a {
+    color: black;
+  }
+  .learnMore a:hover {
+    color: rgb(56, 120, 238);
+  }
+  
+  .title h1 {
+    color: black;
+  }
+  

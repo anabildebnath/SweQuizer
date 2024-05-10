@@ -13,6 +13,7 @@ import Result from "../pages/Result";
 import Videos from "../components/Videos";
 import Beta from "../pages/Beta";
 import About from "../pages/About";
+import Faculties from "../pages/Faculties";
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/about" element={<About />} />
+              <Route path="/faculties" element={<Faculties />} />
               <Route path="/beta" element={<Beta />} />
             </Route>
             <Route element={<PrivateRoute />}>
