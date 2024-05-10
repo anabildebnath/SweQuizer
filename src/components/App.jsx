@@ -14,6 +14,7 @@ import Videos from "../components/Videos";
 import Beta from "../pages/Beta";
 import About from "../pages/About";
 import Faculties from "../pages/Faculties";
+import Tutorials from "../pages/Tutorials";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/about" element={<About />} />
               <Route path="/faculties" element={<Faculties />} />
+              <Route path="/tutorials" element={<Tutorials />} />
               <Route path="/beta" element={<Beta />} />
             </Route>
             <Route element={<PrivateRoute />}>

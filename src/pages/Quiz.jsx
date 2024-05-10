@@ -7,6 +7,7 @@ import useQuestions from "../hooks/useQuestions";
 import Answers from "../components/Answers";
 import MiniPlayer from "../components/MiniPlayer";
 import ProgressBar from "../components/ProgressBar";
+import classes from "../styles/Result.module.css";
 
 const initialState = null;
 
@@ -91,7 +92,7 @@ export default function Quiz() {
     questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
 
   return (
-    <>
+    <div className={classes.resultContainer}>
       {loading && <div>Loading ...</div>}
       {error && <div>There was an error!</div>}
       {!loading && !error && qna && qna.length > 0 && (
@@ -113,6 +114,6 @@ export default function Quiz() {
           <MiniPlayer id={id} />
         </>
       )}
-    </>
+    </div>
   );
 }

@@ -19,8 +19,8 @@ export default function Nav() {
       <div className={classes.navChild}>
         <ul>
           <li>
-            <NavLink to="/termtests"   className={
-                location.pathname === "/termtests" ? classes.activeNavLink : ""
+            <NavLink to="/beta"   className={
+                location.pathname === "/beta" ? classes.activeNavLink : ""
               }>
               <p className="navText">Term Tests</p>
             </NavLink>

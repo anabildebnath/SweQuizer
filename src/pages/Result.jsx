@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import useAnswers from "../hooks/useAnswers";
 import Analysis from "../components/Analysis";
 import Summary from "../components/Summary";
+import classes from "../styles/Result.module.css";
 
 export default function Result() {
   const { id } = useParams();
@@ -39,7 +40,7 @@ export default function Result() {
   const userScore = calculate();
 
   return (
-    <>
+    <div className={classes.resultContainer}>
       {loading && <div>Loading...</div>}
       {error && <div>There was an error!</div>}
 
@@ -49,6 +50,6 @@ export default function Result() {
           <Analysis answers={answers} />
         </>
       )}
-    </>
+    </div>
   );
 }
