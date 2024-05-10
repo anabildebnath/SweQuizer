@@ -1,13 +1,12 @@
-import About from "../components/About";
+import Description from "../components/Description";
 import Footer from "../components/Footer";
 import Search from "../components/Search";
-import classes from "../styles/Landing.module.css";
 
 export default function Landing() {
   return (
-    <div className={classes.alignment}>
+    <div className="alignment">
       <Search />
-      <About />
+      <Description />
       <Footer />
     </div>
   );

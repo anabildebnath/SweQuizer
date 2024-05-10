@@ -25,7 +25,6 @@ body {
 
 a {
   text-decoration: none;
-  color: rgb(20, 108, 223);
   font-weight: 500;
 }
 
@@ -72,4 +71,9 @@ h4 {
   .infinite-scroll-component {
     width: 90%;
   }
+}
+
+
+.alignment{
+  
 }

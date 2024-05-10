@@ -1,20 +1,20 @@
-.about {
+.description {
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0;
+  padding-left: 12vw;
 }
 .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-left: 10vw;
-  padding-right: 10vw;
   margin-top: 15vh;
+  overflow: hidden;
+  padding: 0;
 }
 .element {
   margin: 0;
@@ -22,14 +22,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  min-width: 50%;
-  gap: 2rem;
+  width: 50%;
 }
 .element img {
   width: 5rem;
-  height: auto;
+padding: .5rem;
 }
-
 .title {
   display: flex;
   flex-direction: column;

@@ -5,7 +5,8 @@
   gap: 30px;
   height: 53vh;
   width: 100%;
-  background-color: #dadbf1;
+  /* background-color: #dadbf1; */
+  background-color: rgb(20, 108, 223);
   padding-top: 6rem;
 }
 
@@ -55,5 +56,5 @@
   top:0;
 }
 .search h1{
-  color: black;
+  color: white;
 }

@@ -39,7 +39,8 @@
   width: 100%;
   height: 5rem;
 }
-nav ul li {
+.nav ul li,
+.activeNavLink {
   list-style: none;
   font-weight: 600;
   white-space: nowrap;
@@ -47,28 +48,25 @@ nav ul li {
   height: 3rem;
   text-align: center;
 }
-p {
+.activeNavLink p {
+  color: white;
+  background-color: #2b7180;
+  height: 3rem;
+}
+
+.navChild p{
   padding: 1rem;
 }
 .navChild ul li:hover {
   background-color: #2b7180;
-  transition: background-color .5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
-
 .navChild ul li:hover p {
   color: white;
 }
-
-.navChild ul li.active {
-  background-color: #2b7180;
-  color: white;
-  border: 1px solid #2b7180;
-}
-
 
 @media only screen and (max-width: 600px) {
   .nav .brand h3 {
     display: none;
   }
 }
-

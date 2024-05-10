@@ -10,9 +10,9 @@ import Login from "../pages/Login";
 import Quiz from "../pages/Quiz";
 import Home from "../pages/Home";
 import Result from "../pages/Result";
-import Landing from "../pages/Landing";
 import Videos from "../components/Videos";
 import Beta from "../pages/Beta";
+import About from "../pages/About";
 
 function App() {
   return (
@@ -21,9 +21,9 @@ function App() {
         <Layout>
           <Routes>
             <Route element={<PublicRoute />}>
-              <Route path="/landing" element={<Landing />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/about" element={<About />} />
               <Route path="/beta" element={<Beta />} />
             </Route>
             <Route element={<PrivateRoute />}>

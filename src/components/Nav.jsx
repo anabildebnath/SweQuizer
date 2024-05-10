@@ -1,14 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import classes from "../styles/Nav.module.css";
 import Account from "./Account";
 
 export default function Nav() {
+  const location = useLocation();
+
   return (
     <nav className={classes.nav}>
       <div className={classes.brand}>
         <ul className={classes.alignment}>
           <li>
-            <NavLink exact to="/" className={classes.brand} activeClassName={classes.active}>
+            <NavLink exact to="/" className={classes.brand}>
               <h1>SweQuizer</h1>
             </NavLink>
           </li>
@@ -17,23 +19,35 @@ export default function Nav() {
       <div className={classes.navChild}>
         <ul>
           <li>
-            <NavLink to="/term-tests" activeClassName={classes.active}>
+            <NavLink to="/termtests"   className={
+                location.pathname === "/termtests" ? classes.activeNavLink : ""
+              }>
               <p className="navText">Term Tests</p>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/tutorials" activeClassName={classes.active}>
+            <NavLink to="/tutorials"   className={
+                location.pathname === "/tutorials" ? classes.activeNavLink : ""
+              }>
               <p className="navText">Tutorials</p>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/faculties" activeClassName={classes.active}>
+            <NavLink to="/faculties"   className={
+                location.pathname === "/faculties" ? classes.activeNavLink : ""
+              }>
               <p className="navText">Faculties</p>
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/landing" activeClassName={classes.active}>
-              <p className="navText">About</p>
+            <NavLink
+              to="/about"
+              className={
+                location.pathname === "/about" ? classes.activeNavLink : ""
+              }
+            >
+          
+              <p> About</p>
             </NavLink>
           </li>
           <Account />
