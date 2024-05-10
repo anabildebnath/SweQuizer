@@ -12,47 +12,46 @@
 .topicSection > * {
   width: 30%;
 }
-.introSection1{
+.introSection1 {
   margin-bottom: 10vh;
 }
-/* .introSection1 h1{
-  color: black;
-} */
+
 .introH1 {
   opacity: 0;
-  color: #88B6A1;;
+  color: #88b6a1;
   font-family: "Montserrat", Sans-serif;
   font-size: 68px;
   font-weight: 300;
   line-height: 1.2em;
 }
-.introH3{
-  color:#2B7180;
+.introH3 {
+  color: #2b7180;
   font-family: "Montserrat", Sans-serif;
   font-size: 2.9rem;
   line-height: 1.5em;
   margin-bottom: 3vh;
-
 }
-.introP{
-  color: #2D2D2D;
+.introP {
+  color: #2d2d2d;
   font-size: 1.2rem;
-  padding: 0;
-
+  margin-top: 6vh;
+  font-family: "Montserrat", Sans-serif;
 }
 .fadeIn {
-    opacity: 1;
-    animation: fadeInAnimation 1s ease-in-out forwards;
-  }
+  opacity: 1;
+  animation: fadeInAnimation 1s ease-in-out forwards;
+}
 @keyframes fadeIn {
   from {
-    opacity: 0; 
+    opacity: 0;
   }
   to {
-    opacity: 1; 
+    opacity: 1;
   }
 }
 
-.animate h1{
-  color: #2D2D2D;
+.animate h1 {
+  color: #2b7180;
+  font-size: 3rem;
+  font-family: "Montserrat", Sans-serif;
 }

@@ -9,9 +9,9 @@ export default function Account() {
     <div className={classes.account}>
       {currentUser ? (
         <>
-          {/* <span className="material-icons-outlined" title="Account">
+          <span className="material-icons-outlined" title="Account">
             account_circle
-          </span> */}
+          </span>
           <img src={accImage} alt="" />
 
           <span>{currentUser.displayName}</span>

@@ -29,18 +29,17 @@ export default function Home() {
           <h1
             className={`${classes.introH1} ${showHeader ? classes.fadeIn : ""}`}
           >
-            G Insights
+            Quiz Topic Lists
           </h1>
           <div className={classes.animate}>
-               <h1 className="animate__animated animate__bounce">
-            An animated element
-          </h1>
+            <h1 className="animate__animated animate__bounce">
+            Go through all the topics
+            </h1>
           </div>
-       
         </div>
         <div className={classes.animate}>
           <h1 class="animate__animated animate__fadeInDown">
-            Practical insights to help you win.
+            And choose your quiz topic.
           </h1>
         </div>
         <div>
@@ -56,22 +55,22 @@ export default function Home() {
 
       <div className={classes.topicSection}>
         <div>
-          <Topic topicName="Array" image={arrayImage} />
+          <Topic topicName="Array" image={arrayImage} topicDescription="9 Array videos with 9 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."/>
         </div>
         <div>
-          <Topic topicName="String" image={stringImage} />
+          <Topic topicName="String" image={stringImage} topicDescription="2 String videos with 2 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."/>
         </div>
         <div>
-          <Topic topicName="Sort" image={sortImage} />
+          <Topic topicName="Sort" image={sortImage} topicDescription="2  Sorting Algorithm videos with 2 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."/>
         </div>
         <div>
-          <Topic topicName="Recursion" image={recursionImage} />
+          <Topic topicName="Recursion" image={recursionImage} topicDescription="5 Recursion videos with 5 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."/>
         </div>
         <div>
-          <Topic topicName="Bit Manipulation" image={bitImage} />
+          <Topic topicName="Bit Manipulation" image={bitImage} topicDescription="3 Bit Operation videos with 3 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."/>
         </div>
         <div>
-          <Topic topicName="Linked List" image={linkedImage} />
+          <Topic topicName="Linked List" image={linkedImage} topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."/>
         </div>
       </div>
     </div>
