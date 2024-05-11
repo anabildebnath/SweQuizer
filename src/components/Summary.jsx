@@ -1,5 +1,7 @@
 import { useMemo } from "react";
-import successImage from "../assets/images/student-male.svg";
+import successImage1 from "../assets/images/celebration1.svg";
+import successImage2 from "../assets/images/celebration2.svg";
+import sedImage from "../assets/images/sed.svg";
 import useFetch from "../hooks/useFetch";
 import classes from "../styles/Summary.module.css";
 
@@ -24,7 +26,7 @@ export default function Summary({ score, noq }) {
     }
   );
 
-  const image = result ? result?.photos[0].src.medium : successImage;
+  const image = result ? result?.photos[0].src.medium : successImage1;
 
   return (
     <div className={classes.summary}>
@@ -37,11 +39,17 @@ export default function Summary({ score, noq }) {
 
       {loading && <div className={classes.badge}>Loading your badge...</div>}
 
-      {error && <div className={classes.badge}>An error occured!</div>}
+      {/* {error && <div className={classes.badge}>An error occured!</div>} */}
 
       {!loading && !error && (
         <div className={classes.badge}>
-          <img src={image} alt="Success" />
+          {score > 5 && score < 15 ? (
+            <img src={image} alt="Success" />
+          ) : score > 10 ? (
+            <img src={successImage2} alt="Success" />
+          ) : (
+            <img src={sedImage} alt="Sed" />
+          )}
         </div>
       )}
     </div>

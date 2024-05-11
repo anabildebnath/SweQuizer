@@ -1,8 +1,14 @@
-.resultContainer{
-    padding-left: 10vw;
-    padding-right: 10vw;
-    margin-top: 20vh;
+.resultContainer {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  margin-top: 20vh;
 }
-.resultContainer h1{
-    color: black;
+.resultContainer h1 {
+  color: black;
+}
+.getBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10vh;
 }

@@ -9,7 +9,8 @@
               "title": "a) int array[10];"
             },
             {
-              "title": "b) int array;"
+              "correct": true,
+              "title": "b) long long array[8];"
             },
             {
               "title": "c) array{10};"
@@ -4613,142 +4614,70 @@
         {
           "options": [
             {
-              "title": "with var"
+              "title": "a) int array[10];"
             },
             {
-              "title": "with let"
+              "title": "b) long long array[8];"
             },
             {
-              "title": "with const"
+              "title": "c) array{10};"
             },
             {
-              "title": "with variable"
-            },
-            {
-              "title": "with declare"
-            },
-            {
-              "title": "with new"
-            },
-            {
-              "title": "with number"
-            },
-            {
-              "title": "with string"
-            },
-            {
-              "title": "with boolean"
-            },
-            {
-              "title": "with nothing"
+              "title": "d) array array[10];"
             }
           ],
-          "title": "How to declare JavaScript variables?"
+          "title": "1. Which of the following correctly declares an array??"
         },
         {
           "options": [
             {
-              "title": "September 1998"
+              "title": "a) 9"
             },
             {
-              "title": "October 1999"
+              "title": "b) 8"
             },
             {
-              "title": "September 1995"
+              "title": "c) 0"
             },
             {
-              "title": "September 1993"
-            },
-            {
-              "title": "August 1990"
-            },
-            {
-              "title": "January 1995"
-            },
-            {
-              "title": "with number"
-            },
-            {
-              "title": "December 1995"
-            },
-            {
-              "title": "March 1996"
-            },
-            {
-              "title": "January 1970"
+              "title": "d) Programmer-defined"
             }
           ],
-          "title": "When was JavaScript invented?"
+          "title": "2. What is the index number of the last element of an array with 9 elements??"
         },
         {
           "options": [
             {
-              "title": "Jordan Walke"
+              "title": "a) An array is a series of elements of the same type in contiguous memory locations"
             },
             {
-              "title": "Netscape"
+              "title": "b) An array is a series of element"
             },
             {
-              "title": "Jack Ma"
+              "title": "c) An array is a series of elements of the same type placed in non-contiguous memory locations"
             },
             {
-              "title": "Nayok Razzaq"
-            },
-            {
-              "title": "Takla Rubel"
-            },
-            {
-              "title": "Tarzan"
-            },
-            {
-              "title": "Brendan Eich"
-            },
-            {
-              "title": "Mark Zuckerburg"
-            },
-            {
-              "title": "Bill Gates"
-            },
-            {
-              "title": "Steve Jobs"
+              "title": "d) An array is an element of the different type"
             }
           ],
-          "title": "Who or which company created JavaScript?"
+          "title": "3. What is the correct definition of an array?"
         },
         {
           "options": [
             {
-              "title": "ES2020"
+              "title": "a) An array is a series of elements of the same type in contiguous memory locations"
             },
             {
-              "title": "ES2021"
+              "title": "b) An array is a series of element"
             },
             {
-              "title": "ES6"
+              "title": "c) An array is a series of elements of the same type placed in non-contiguous memory locations"
             },
             {
-              "title": "ES7"
-            },
-            {
-              "title": "ES8"
-            },
-            {
-              "title": "ES2022"
-            },
-            {
-              "title": "ES21"
-            },
-            {
-              "title": "ES3"
-            },
-            {
-              "title": "ES9"
-            },
-            {
-              "title": "ES2020"
+              "title": "d) An array is an element of the different type"
             }
           ],
-          "title": "What is the latest version of ECMAScript"
+          "title": "4. Which of the following gives the memory address of the first element in array?"
         }
       ]
     },

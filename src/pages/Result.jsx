@@ -1,9 +1,10 @@
 import _ from "lodash";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, Link } from "react-router-dom";
 import useAnswers from "../hooks/useAnswers";
 import Analysis from "../components/Analysis";
 import Summary from "../components/Summary";
 import classes from "../styles/Result.module.css";
+import Button from "../components/Button";
 
 export default function Result() {
   const { id } = useParams();
@@ -50,6 +51,14 @@ export default function Result() {
           <Analysis answers={answers} />
         </>
       )}
+      <div className={classes.getBack}>
+        <Link to="/">
+          {/* window.scroll method lets you dictate where do in the viewport you want to be redirected to  */}
+          <Button onClick={() => window.scrollTo(0, 0)}>
+            Get back to home
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
