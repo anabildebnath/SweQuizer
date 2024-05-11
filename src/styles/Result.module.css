@@ -1,4 +1,8 @@
 .resultContainer{
     padding-left: 10vw;
     padding-right: 10vw;
+    margin-top: 20vh;
+}
+.resultContainer h1{
+    color: black;
 }

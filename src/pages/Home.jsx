@@ -48,10 +48,7 @@ export default function Home() {
           </div>
           <div>
             <p className={classes.introP}>
-              Welcome to our ever-growing collection of expert resources! This
-              is not a passive blog. Lookout for downloadable playbooks,
-              interactive videos, and other tools to help you do the actual work
-              of finding product-market fit and raising capital.
+              Welcome to the quiz app, choose your topic list.
             </p>
           </div>
         </div>
