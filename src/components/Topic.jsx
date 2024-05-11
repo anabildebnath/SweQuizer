@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "../styles/Topic.module.css";
 
-export default function Topic({ topicName, image, topicDescription }) {
+export default function Topic({ topicName, image, topicDescription ,bgColor}) {
   return (
     <div className={classes.topicContainer}>
       <Link to={`/videos/${topicName}`} className={classes.topicLink}>
@@ -16,14 +16,15 @@ export default function Topic({ topicName, image, topicDescription }) {
             {/* <span class="material-symbols-outlined">menu</span> not working because for some reason symbols class don't work but icons do*/}
           </h4>{" "}
         </Link>{" "}
-        <span className={classes.logoSpan}> <span class="material-icons-outlined">read_more</span></span>
-       
+        <span className={classes.logoSpan}>
+          {" "}
+          <span class="material-icons-outlined">read_more</span>
+        </span>
       </div>
-
-      <div className={classes.styleSpan}>
-        <span className={classes.styleSpan1}></span>
-        <span className={classes.styleSpan2}></span>
-      </div>
+      <span
+        className={classes.styleSpan1}
+        style={{ backgroundColor: bgColor}}
+      ></span>
     </div>
   );
 }

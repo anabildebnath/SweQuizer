@@ -6,9 +6,9 @@ import linkedImage from "../assets/images/linked.png";
 import recursionImage from "../assets/images/recursion.png";
 import sortImage from "../assets/images/sort.jpg";
 import stringImage from "../assets/images/string.jpg";
+import Footer from "../components/Footer";
 import Topic from "../components/Topic";
 import classes from "../styles/Home.module.css";
-import Footer from "../components/Footer";
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -60,6 +60,7 @@ export default function Home() {
               topicName="Array"
               image={arrayImage}
               topicDescription="9 Array videos with 9 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#2B7180"
             />
           </div>
           <div>
@@ -67,6 +68,7 @@ export default function Home() {
               topicName="String"
               image={stringImage}
               topicDescription="2 String videos with 2 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#88B6A1"
             />
           </div>
           <div>
@@ -74,6 +76,7 @@ export default function Home() {
               topicName="Sort"
               image={sortImage}
               topicDescription="2  Sorting Algorithm videos with 2 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#F0B673"
             />
           </div>
           <div>
@@ -81,6 +84,7 @@ export default function Home() {
               topicName="Recursion"
               image={recursionImage}
               topicDescription="5 Recursion videos with 5 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#BCD3C7"
             />
           </div>
           <div>
@@ -88,6 +92,7 @@ export default function Home() {
               topicName="Bit Manipulation"
               image={bitImage}
               topicDescription="3 Bit Operation videos with 3 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#88B6A1"
             />
           </div>
           <div>
@@ -95,6 +100,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#88B6A1"
             />
           </div>
           <div>
@@ -102,6 +108,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#BCD3C7"
             />
           </div>
           <div>
@@ -109,6 +116,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#F0B673"
             />
           </div>
           <div>
@@ -116,6 +124,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#2B7180"
             />
           </div>
           <div>
@@ -123,6 +132,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#F0B673"
             />
           </div>
           <div>
@@ -130,6 +140,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#2B7180"
             />
           </div>
           <div>
@@ -137,6 +148,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#BCD3C7"
             />
           </div>
           <div>
@@ -144,6 +156,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#88B6A1"
             />
           </div>
           <div>
@@ -151,6 +164,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#F0B673"
             />
           </div>
           <div>
@@ -158,6 +172,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#2B7180"
             />
           </div>
           <div>
@@ -165,6 +180,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#F0B673"
             />
           </div>
           <div>
@@ -172,6 +188,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#88B6A1"
             />
           </div>
           <div>
@@ -179,6 +196,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#2B7180"
             />
           </div>
           <div>
@@ -186,6 +204,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#F0B673"
             />
           </div>
           <div>
@@ -193,6 +212,7 @@ export default function Home() {
               topicName="Linked List"
               image={linkedImage}
               topicDescription="10 Linked List videos with 10 quiz tests, each quiz has in total 4 questions and every question is of 5 marks."
+              bgColor="#BCD3C7"
             />
           </div>
         </div>
