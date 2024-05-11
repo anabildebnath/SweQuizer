@@ -16,7 +16,8 @@ export default function Topic({ topicName, image, topicDescription }) {
             {/* <span class="material-symbols-outlined">menu</span> not working because for some reason symbols class don't work but icons do*/}
           </h4>{" "}
         </Link>{" "}
-        <span class="material-icons-outlined">read_more</span>
+        <span className={classes.logoSpan}> <span class="material-icons-outlined">read_more</span></span>
+       
       </div>
 
       <div className={classes.styleSpan}>
