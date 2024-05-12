@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import "../styles/App.css";
@@ -18,7 +18,7 @@ import Tutorials from "../pages/Tutorials";
 
 function App() {
   useEffect(() => {
-    document.title = "SweQuizer"; // Set your desired title here
+    document.title = "SweQuizer";
   }, []);
   return (
     <Router>
@@ -29,8 +29,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/about" element={<About />} />
-              <Route path="/faculties" element={<Faculties />} />
-              <Route path="/tutorials" element={<Tutorials />} />
+
               <Route path="/beta" element={<Beta />} />
             </Route>
             <Route element={<PrivateRoute />}>
@@ -38,7 +37,9 @@ function App() {
               <Route path="/videos/:topicName" element={<Videos />} />
               <Route path="/quiz/:id" element={<Quiz />} />
               <Route path="/result/:id" element={<Result />} />
+              <Route path="/tutorials" element={<Tutorials />} />
             </Route>
+            <Route path="/faculties" element={<Faculties />} />
           </Routes>
         </Layout>
       </AuthProvider>

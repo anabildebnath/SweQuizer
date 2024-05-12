@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 .description {
     display: flex;
     flex-direction: column;
@@ -36,7 +37,9 @@
     gap: 1rem;
   }
   .title p {
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-family: "Montserrat", Sans-serif;
   }
   .learnMore {
     display: flex;
@@ -52,5 +55,6 @@
   
   .title h1 {
     color: black;
+    font-family: "Montserrat", Sans-serif;
   }
   

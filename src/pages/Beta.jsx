@@ -17,8 +17,8 @@ export default function Beta() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        border: "1px solid red",
-        minHeight: "100vh",
+        minHeight: "90vh",
+        overflow:"hidden"
       }}
     >
       {/* Pass the array of words as props to the TypewriterEffect component */}

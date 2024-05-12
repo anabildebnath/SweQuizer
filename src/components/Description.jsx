@@ -20,9 +20,7 @@ export default function Description() {
               <p>
                 Always stay updated about upcoming the term tests posted by
                 faculties. You can search for specific term tests with course,
-                faculty or date queries. This will provide you with all the
-                upcoming examination's information so that you don't miss on
-                anything.
+                faculty or date queries.
               </p>
 
               <div className={classes.learnMore}>
@@ -42,9 +40,7 @@ export default function Description() {
               <p>
                 Our user-friendly interface and intuitive design make it easy
                 for students to navigate through the quizzes, track their
-                progress, and review their results. Plus, with the flexibility
-                of online learning, students can take quizzes at their own pace
-                and schedule.
+                progress, and review their results.
               </p>
               <div className={classes.learnMore}>
                 <Link to="/login">Learn More</Link>
@@ -62,9 +58,7 @@ export default function Description() {
               <h1>Immediately see test results</h1>
               <p>
                 Experience real-time feedback. Say goodbye to waiting anxiously
-                for your test results. You'll receive detailed insights into
-                your performance, including scores, correct answers all
-                displayed immediately upon submission.
+                for your test results. Receive your performance, including scores, correct answers.
               </p>
 
               <div className={classes.learnMore}>
@@ -86,8 +80,7 @@ export default function Description() {
               <h1>Contact faculties</h1>
               <p>
                 Have questions or need clarification on any aspect of a test?
-                Our platform provides direct access to knowledgeable faculties
-                to address all your queries and concerns. Connect with our
+            Connect with our
                 faculties today for assistance on any issues.
               </p>
               <div className={classes.learnMore}>

@@ -18,7 +18,7 @@ export default function Faculty() {
               <h4> Director</h4>
               <p>
                 Contact Information: Phone: +880-821- 713850/ 714479/ 717850
-                Ext. 671 (O), +880-821-726695 (H), +8801770348185 Email:
+                Ext. 671 (O), +880-821-726695 (H), +8801770348185 <br /> Email:
                 jahir-cse@sust.edu
               </p>
 
@@ -41,7 +41,7 @@ export default function Faculty() {
               <h1>Dr. Ahsan Habib.</h1>
               <h4> Associate Professor</h4>
               <p>
-                Contact Information: Phone: 01915796886 Email:
+                Contact Information: <br /> Phone: 01915796886 Email:
                 ahabib-iict@sust.edu
               </p>
               <div className={classes.learnMore}>

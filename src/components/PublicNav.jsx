@@ -19,23 +19,22 @@ export default function Nav() {
       <div className={classes.navChild}>
         <ul>
           <li>
-            <NavLink to="/beta"   className={
+            <NavLink
+              to="/beta"
+              className={
                 location.pathname === "/beta" ? classes.activeNavLink : ""
-              }>
-              <p className="navText">Term Tests</p>
+              }
+            >
+              <p className="navText">Notice</p>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/tutorials"   className={
-                location.pathname === "/tutorials" ? classes.activeNavLink : ""
-              }>
-              <p className="navText">Tutorials</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/faculties"   className={
+            <NavLink
+              to="/faculties"
+              className={
                 location.pathname === "/faculties" ? classes.activeNavLink : ""
-              }>
+              }
+            >
               <p className="navText">Faculties</p>
             </NavLink>
           </li>
@@ -46,7 +45,6 @@ export default function Nav() {
                 location.pathname === "/about" ? classes.activeNavLink : ""
               }
             >
-          
               <p> About</p>
             </NavLink>
           </li>
