@@ -43,6 +43,7 @@
 .activeNavLink {
   list-style: none;
   font-weight: 600;
+  font-size: 16px;
   white-space: nowrap;
   width: 8rem;
   height: 3rem;
@@ -52,9 +53,10 @@
   color: white;
   background-color: #2b7180;
   height: 3rem;
+  width: 8rem;
 }
 
-.navChild p{
+.navChild p {
   padding: 1rem;
 }
 .navChild ul li:hover {
@@ -69,4 +71,9 @@
   .nav .brand h3 {
     display: none;
   }
+}
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

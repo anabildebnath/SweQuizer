@@ -15,6 +15,7 @@ import Beta from "../pages/Beta";
 import About from "../pages/About";
 import Faculties from "../pages/Faculties";
 import Tutorials from "../pages/Tutorials";
+import Profile from "../pages/Profile";
 
 function App() {
   useEffect(() => {
@@ -29,7 +30,6 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/about" element={<About />} />
-
               <Route path="/beta" element={<Beta />} />
             </Route>
             <Route element={<PrivateRoute />}>
@@ -38,6 +38,7 @@ function App() {
               <Route path="/quiz/:id" element={<Quiz />} />
               <Route path="/result/:id" element={<Result />} />
               <Route path="/tutorials" element={<Tutorials />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
             <Route path="/faculties" element={<Faculties />} />
           </Routes>
