@@ -16,6 +16,12 @@ import {
   doc,
 } from "firebase/firestore";
 import { useUser } from "../context/UserContext";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
+import { auth } from "../firebase";
 
 export default function SignupForm() {
   const [username, setUsername] = useState("");
@@ -30,19 +36,55 @@ export default function SignupForm() {
   const [loading, setLoading] = useState();
   const { signup } = useAuth();
   const navigate = useNavigate();
-
+  const [socialLoginClicked, setSocialLoginClicked] = useState(false);
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const { setUserData } = useUser();
 
-  //initialize firestore service
-  const db = getFirestore();
 
-  //collection ref
+  // Here is the function for handling google direct popup login
+  async function handleGoogleSignIn() {
+    try {
+      setError("");
+      setLoading(true);
+      setSocialLoginClicked(true);
+      await signInWithPopup(auth, googleProvider);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+      setError("Failed to login with Google!");
+    }
+  }
+
+  // Here is the function for handling github direct popup login
+  async function handleGithubSignIn() {
+    try {
+      setError("");
+      setLoading(true);
+      setSocialLoginClicked(true);
+      await signInWithPopup(auth, githubProvider);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+      setError("Failed to login with GitHub!");
+    }
+  }
+
+  //Firestore data adding
+  const db = getFirestore();
   const colRef = collection(db, "user");
+
+
+ 
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
+    if(!socialLoginClicked)
+      {
+            if (password !== confirmPassword) {
       return setError("Passwords don't match!");
       // setError("Passwords don't match!");
       // return;
@@ -63,25 +105,28 @@ export default function SignupForm() {
 
       // Now, docRef.id contains the unique document ID
       const newUserId = docRef.id;
-      console.log("New User Document ID:", newUserId);
+      // console.log("New User Document ID:", newUserId);
 
       // Fetch additional data specific to the document ID
       const userDoc = await getDoc(doc(colRef, newUserId));
       if (userDoc.exists()) {
         const userData = userDoc.data();
         setUserData(userData);
-        console.log("User Data:", userData);
+        // console.log("User Data:", userData);
       } else {
-        console.log("No such document!");
+        // console.log("No such document!");
       }
 
-      await signup(email, password, username, reg, batch, sem);
+      await signup(email, password, username);
       navigate("/");
     } catch (err) {
       console.log(err);
       setLoading(false);
       setError("Failed to create an account!");
     }
+      }
+
+
   }
 
   return (
@@ -94,11 +139,15 @@ export default function SignupForm() {
           <div className={classes.headerAccounts}>
             <div className={classes.accountButton}>
               <img src={googleImage} alt="" />
-              <button on>Google </button>
+           <button type="button" onClick={handleGoogleSignIn}>
+              Google{" "}
+            </button>
             </div>
             <div className={classes.accountButton}>
               <img src={githubImage} alt="" />
-              <button>Github</button>
+              <button type="button" onClick={handleGithubSignIn}>
+              Github
+            </button>
             </div>
           </div>
           <div className={classes.separator}>

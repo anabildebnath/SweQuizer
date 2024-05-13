@@ -16,7 +16,7 @@
   margin-bottom: 10vh;
 }
 
-.introH1 {
+.zeroOpacity h1 {
   opacity: 0;
   color: #88b6a1;
   font-family: "Montserrat", Sans-serif;
@@ -24,19 +24,13 @@
   font-weight: 300;
   line-height: 1.2em;
 }
-.introH3 {
+.animate h1 {
   color: #2b7180;
   font-family: "Montserrat", Sans-serif;
-  font-size: 2.9rem;
-  line-height: 1.5em;
-  margin-bottom: 3vh;
-}
-.introP {
-  color: #2d2d2d;
-  font-size: 1.2rem;
-  font-size: 1.5rem;
-  margin-top: 6vh;
-  font-family: "Montserrat", Sans-serif;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2em;
+  margin-top: 3vh;
 }
 .fadeIn {
   opacity: 1;
@@ -51,8 +45,29 @@
   }
 }
 
-.animate h1 {
+.container {
+  display: inline-block;
+}
+.container h1 {
   color: #2b7180;
-  font-size: 3rem;
   font-family: "Montserrat", Sans-serif;
+  font-size: 58px;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+.typedOut {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  animation: typing 2s forwards;
+  font-size: 1.6rem;
+  width: 0;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }

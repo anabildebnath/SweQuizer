@@ -10,11 +10,12 @@
   margin-top: 10vh;
   padding-left: 15vw;
 }
+
 .tutorial img {
   width: 65%;
 }
 .tutorial h1 {
-    color:#2B7180;
+  color: #2b7180;
   font-family: "Montserrat", Sans-serif;
   font-size: 58px;
   font-weight: 300;

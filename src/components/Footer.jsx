@@ -15,6 +15,7 @@ export default function Footer() {
       </div>
       <div className={classes.element}>
         <h1 className={classes.title}>Resources</h1>
+        
         <Link
           to="https://medium.com/@anabildebnath16/swequizer-documentation-e79044d367a2"
           target="_blank"

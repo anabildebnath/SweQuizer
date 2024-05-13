@@ -24,8 +24,9 @@ export default function LoginForm() {
   const navigate = useNavigate();
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
-  const [socialLoginClicked, setSocialLoginClicked] = useState(false);
+  const [socialLoginClicked, setSocialLoginClicked] = useState(false); //when github/google popup is used the normal email-password login will not be handled
 
+  // Here is the function for handling google direct popup login
   async function handleGoogleSignIn() {
     try {
       setError("");
@@ -40,6 +41,7 @@ export default function LoginForm() {
     }
   }
 
+  // Here is the function for handling github direct popup login
   async function handleGithubSignIn() {
     try {
       setError("");
@@ -54,6 +56,7 @@ export default function LoginForm() {
     }
   }
 
+  //This function handles the email password login by handling the event from form submit
   async function handleSubmit(e) {
     e.preventDefault();
     if (!socialLoginClicked) {

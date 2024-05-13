@@ -14,12 +14,11 @@ export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
 
   useEffect(() => {
-    // After a delay of 500ms (.1 second), set showHeader to true
+    // After a delay of 500ms, set showHeader to true
     const timeout = setTimeout(() => {
       setShowHeader(true);
-    }, 800);
+    }, 500);
 
-    // Cleanup function to clear the timeout when the component unmounts
     return () => clearTimeout(timeout);
   }, []); // Empty dependency array ensures the effect runs only once after the component mounts
 
@@ -28,32 +27,28 @@ export default function Home() {
       <div className={classes.alignment}>
         <div className={classes.introSection1}>
           <div>
-            <h1
-              className={`${classes.introH1} ${
-                showHeader ? classes.fadeIn : ""
-              }`}
-            >
-              Quiz Topic Lists
-            </h1>
-            <div className={classes.animate}>
-              <h1 className="animate__animated animate__bounce">
-                Go through all the topics
+            <div className={classes.zeroOpacity}>
+              {" "}
+              <h1
+                className={
+                  showHeader ? "animate__animated animate__fadeInDown" : ""
+                }
+              >
+                Welcome to the quiz app
               </h1>
+            </div>
+            <div className={classes.container}>
+              <div className={classes.typedOut}>
+                <h1> Go through all the topics.</h1>
+              </div>
             </div>
           </div>
           <div className={classes.animate}>
-            <h1 class="animate__animated animate__fadeInDown">
-              And choose your quiz topic.
+            <h1 className="animate__animated animate__bounce">
+            Choose your topic list
             </h1>
           </div>
-          <div>
-            <p className={classes.introP}>
-              Welcome to the quiz app, choose your topic list.
-            </p>
-          </div>
         </div>
-        <div className={classes.introSection2}></div>
-
         <div className={classes.topicSection}>
           <div>
             <Topic

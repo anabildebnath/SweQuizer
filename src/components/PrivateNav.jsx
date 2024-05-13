@@ -26,9 +26,7 @@ export default function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/beta"   className={
-                location.pathname === "/beta" ? classes.activeNavLink : ""
-              }>
+            <NavLink to="/beta">
               <p className="navText">Upcoming Tests</p>
             </NavLink>
           </li>

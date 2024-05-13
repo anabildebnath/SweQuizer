@@ -32,7 +32,6 @@ function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/beta" element={<Beta />} />
               </Route>
               <Route element={<PrivateRoute />}>
                 <Route path="/" element={<Home />} />
@@ -43,6 +42,7 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
               </Route>
               <Route path="/faculties" element={<Faculties />} />
+              <Route path="/beta" element={<Beta />} />
             </Routes>
           </Layout>
         </UserProvider>

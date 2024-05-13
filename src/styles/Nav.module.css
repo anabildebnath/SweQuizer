@@ -72,7 +72,7 @@
     display: none;
   }
 }
-a {
+.nav a {
   display: flex;
   align-items: center;
   justify-content: center;

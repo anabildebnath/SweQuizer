@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs,where, query, onSnapshot } from "firebase/firestore";
 
 const app = initializeApp({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -14,15 +14,26 @@ const app = initializeApp({
 
 // Get the auth object
 const auth = getAuth(app);
-
 // Create a GoogleAuthProvider instance
 const googleProvider = new GoogleAuthProvider();
 
-//initialize firestore service
-const db = getFirestore();
 
-//collection ref
+const db = getFirestore();
 const colRef = collection(db, "user");
+
+const q = query(colRef, where("Email", "==", "shawon@gmail.com"));
+onSnapshot(q, (snapshot) => {
+  let user = [];
+  snapshot.docs.forEach((doc) => {
+    user.push({ ...doc.data(), id: doc.id });
+  });
+  console.log("just shawon:", user);
+});
+
+
+
+
+
 
 //get collection data
 getDocs(colRef)
@@ -37,5 +48,5 @@ getDocs(colRef)
     console.log(err.message);
   });
 
-export { auth, googleProvider };
+export { auth, googleProvider, db };
 export default app;
