@@ -16,6 +16,7 @@ import About from "../pages/About";
 import Faculties from "../pages/Faculties";
 import Tutorials from "../pages/Tutorials";
 import Profile from "../pages/Profile";
+import { UserProvider } from "../context/UserContext";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
+      <UserProvider>
         <Layout>
           <Routes>
             <Route element={<PublicRoute />}>
@@ -43,6 +45,7 @@ function App() {
             <Route path="/faculties" element={<Faculties />} />
           </Routes>
         </Layout>
+        </UserProvider>
       </AuthProvider>
     </Router>
   );

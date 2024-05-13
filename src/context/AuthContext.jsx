@@ -30,19 +30,24 @@ export function AuthProvider({ children }) {
   }, []);
 
   // signup function
-  async function signup(email, password, username) {
+  async function signup(email, password, username, reg, batch, semester) {
     const auth = getAuth();
-    await createUserWithEmailAndPassword(auth, email, password);
+    // await createUserWithEmailAndPassword(auth, email, password);
+    const { user } = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
     // update profile
     await updateProfile(auth.currentUser, {
       displayName: username,
+      displayReg: reg,
+      displayBatch: batch,
+      displaySemester: semester,
     });
 
-    const user = auth.currentUser;
-    setCurrentUser({
-      ...user,
-    });
+    setCurrentUser(user);
   }
 
   // login function

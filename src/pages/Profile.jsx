@@ -1,10 +1,13 @@
 import React from "react";
+import profileImage from "../assets/images/account logo.svg";
 import { useAuth } from "../context/AuthContext";
 import classes from "../styles/Profile.module.css";
-import profileImage from "../assets/images/account logo.svg";
+import { useUser } from "../context/UserContext";
 
 export default function Profile() {
   const { currentUser } = useAuth();
+  const { userData } = useUser();
+  console.log("User Data:", userData);
 
   return (
     <div className={classes.profileContainer}>
@@ -23,31 +26,29 @@ export default function Profile() {
         <div className={classes.profileMainbar}>
           {currentUser ? (
             <div className={classes.mainBar}>
-              {" "}
               <h1>My Profile</h1>
               <div className={classes.name}>
-                <img src={profileImage} alt="profile pic" />
+                <img src={profileImage} alt="profile pic" />{" "}
                 <div className={classes.nameInfo}>
-                  {" "}
                   <h3>{currentUser.displayName}</h3>
                 </div>
               </div>
               <div className={classes.personalInfo}>
                 <h3>Personal Information</h3>
+
                 <div className={classes.row}>
-                  <p>Registration number</p>
+                  <p>Registration number: {userData.Reg}</p>
                 </div>
                 <div className={classes.row}>
-                  <p>Batch</p>
+                  <p>Batch: {userData.Batch}</p>
                 </div>
                 <div className={classes.row}>
-                  <p>Semester</p>
+                  <p>Semester: {userData.Sem}</p>
                 </div>
+
                 <div className={classes.row}>
-                  <p>Email address</p>
-                  <p>{currentUser.email}</p>
+                  <p>Email address: {currentUser.email}</p>
                 </div>
-          
               </div>
               <div className={classes.address}></div>
             </div>

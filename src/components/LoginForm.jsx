@@ -84,11 +84,15 @@ export default function LoginForm() {
         <div className={classes.headerAccounts}>
           <div className={classes.accountButton}>
             <img src={googleImage} alt="" />
-            <button type="button" onClick={handleGoogleSignIn}>Google </button>
+            <button type="button" onClick={handleGoogleSignIn}>
+              Google{" "}
+            </button>
           </div>
           <div className={classes.accountButton}>
             <img src={githubImage} alt="" />
-            <button type="button" onClick={handleGithubSignIn}>Github</button>
+            <button type="button" onClick={handleGithubSignIn}>
+              Github
+            </button>
           </div>
         </div>
         <div className={classes.separator}>
@@ -134,11 +138,10 @@ export default function LoginForm() {
           {error && <p className="error">{error}</p>}
         </div>
 
-        <div>
+        <div className="info">
           Don't have an account? <Link to="/signup">Signup</Link> instead.
         </div>
       </div>
-      
     </Form>
   );
 }
