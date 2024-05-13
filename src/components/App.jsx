@@ -25,26 +25,26 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-      <UserProvider>
-        <Layout>
-          <Routes>
-            <Route element={<PublicRoute />}>
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/beta" element={<Beta />} />
-            </Route>
-            <Route element={<PrivateRoute />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/videos/:topicName" element={<Videos />} />
-              <Route path="/quiz/:id" element={<Quiz />} />
-              <Route path="/result/:id" element={<Result />} />
-              <Route path="/tutorials" element={<Tutorials />} />
-              <Route path="/profile" element={<Profile />} />
-            </Route>
-            <Route path="/faculties" element={<Faculties />} />
-          </Routes>
-        </Layout>
+        <UserProvider>
+          <Layout>
+            <Routes>
+              <Route element={<PublicRoute />}>
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/beta" element={<Beta />} />
+              </Route>
+              <Route element={<PrivateRoute />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/videos/:topicName" element={<Videos />} />
+                <Route path="/quiz/:id" element={<Quiz />} />
+                <Route path="/result/:id" element={<Result />} />
+                <Route path="/tutorials" element={<Tutorials />} />
+                <Route path="/profile" element={<Profile />} />
+              </Route>
+              <Route path="/faculties" element={<Faculties />} />
+            </Routes>
+          </Layout>
         </UserProvider>
       </AuthProvider>
     </Router>

@@ -3,28 +3,32 @@ import profileImage from "../assets/images/account logo.svg";
 import { useAuth } from "../context/AuthContext";
 import classes from "../styles/Profile.module.css";
 import { useUser } from "../context/UserContext";
+import { UserProvider } from "../context/UserContext";
 
 export default function Profile() {
   const { currentUser } = useAuth();
   const { userData } = useUser();
   console.log("User Data:", userData);
+  if (!userData) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <div className={classes.profileContainer}>
-      <div className={classes.profileMain}>
-        <div className={classes.profileSidebar}>
-          <ul>
-            <li>My Profile</li>
-            <li>Security</li>
-            <li>Upcoming Tests</li>
-            <li>Test Records</li>
-            <li>Notification</li>
-            <li>Messages</li>
-            <li>Delete Account</li>
-          </ul>
-        </div>
-        <div className={classes.profileMainbar}>
-          {currentUser ? (
+    <UserProvider>
+      <div className={classes.profileContainer}>
+        <div className={classes.profileMain}>
+          <div className={classes.profileSidebar}>
+            <ul>
+              <li>My Profile</li>
+              <li>Security</li>
+              <li>Upcoming Tests</li>
+              <li>Test Records</li>
+              <li>Notification</li>
+              <li>Messages</li>
+              <li>Delete Account</li>
+            </ul>
+          </div>
+          <div className={classes.profileMainbar}>
             <div className={classes.mainBar}>
               <h1>My Profile</h1>
               <div className={classes.name}>
@@ -52,11 +56,9 @@ export default function Profile() {
               </div>
               <div className={classes.address}></div>
             </div>
-          ) : (
-            <p>No user logged in</p>
-          )}
+          </div>
         </div>
       </div>
-    </div>
+    </UserProvider>
   );
 }
