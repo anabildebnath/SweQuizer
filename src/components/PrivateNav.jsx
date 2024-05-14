@@ -16,35 +16,56 @@ export default function Nav() {
           </li>
         </ul>
       </div>
-      <div className={classes.navChild}>
+      <div className={`${classes.navChild} ${classes.privateNav}`}>
         <ul>
-        <li>
-            <NavLink to="/beta"   className={
+          <li>
+            <NavLink
+              to="/beta"
+              className={
                 location.pathname === "/beta" ? classes.activeNavLink : ""
-              }>
-              <p className="navText">Test Records</p>
+              }
+            >
+              Test Records
             </NavLink>
           </li>
           <li>
-            <NavLink to="/beta">
-              <p className="navText">Upcoming Tests</p>
+            <NavLink
+              to="/test"
+              className={
+                location.pathname === "/test" ? classes.activeNavLink : ""
+              }
+            >
+              Upcoming Tests
             </NavLink>
           </li>
           <li>
-            <NavLink to="/tutorials"   className={
-                location.pathname === "/tutorials" ? classes.activeNavLink : ""
-              }>
-              <p className="navText">Tutorials</p>
-            </NavLink>
+            <span className={classes.sp}>
+              <NavLink
+                to="/tutorials"
+                className={
+                  location.pathname === "/tutorials"
+                    ? classes.activeNavLink
+                    : ""
+                }
+              >
+                Tutorials
+              </NavLink>
+            </span>
           </li>
           <li>
-            <NavLink to="/faculties"   className={
-                location.pathname === "/faculties" ? classes.activeNavLink : ""
-              }>
-              <p className="navText">Faculties</p>
-            </NavLink>
+            <span className={classes.sp}>
+              <NavLink
+                to="/faculties"
+                className={
+                  location.pathname === "/faculties"
+                    ? classes.activeNavLink
+                    : ""
+                }
+              >
+                Faculties
+              </NavLink>
+            </span>
           </li>
-    
           <Account />
         </ul>
       </div>

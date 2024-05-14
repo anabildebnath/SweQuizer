@@ -8,15 +8,15 @@ export default function Nav() {
   return (
     <nav className={classes.nav}>
       <div className={classes.brand}>
-        <ul className={classes.alignment}>
+        <ul>
           <li>
-            <NavLink exact to="/" className={classes.brand}>
+            <NavLink exact to="/">
               <h1>SweQuizer</h1>
             </NavLink>
           </li>
         </ul>
       </div>
-      <div className={classes.navChild}>
+      <div className={`${classes.navChild} ${classes.publicNav}`}>
         <ul>
           <li>
             <NavLink
@@ -25,7 +25,7 @@ export default function Nav() {
                 location.pathname === "/beta" ? classes.activeNavLink : ""
               }
             >
-              <p className="navText">Notice</p>
+              Notices
             </NavLink>
           </li>
           <li>
@@ -35,7 +35,7 @@ export default function Nav() {
                 location.pathname === "/faculties" ? classes.activeNavLink : ""
               }
             >
-              <p className="navText">Faculties</p>
+              Faculties
             </NavLink>
           </li>
           <li>
@@ -45,7 +45,7 @@ export default function Nav() {
                 location.pathname === "/about" ? classes.activeNavLink : ""
               }
             >
-              <p> About</p>
+              About
             </NavLink>
           </li>
           <Account />

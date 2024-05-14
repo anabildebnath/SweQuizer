@@ -17,6 +17,7 @@ import Faculties from "../pages/Faculties";
 import Tutorials from "../pages/Tutorials";
 import Profile from "../pages/Profile";
 import { UserProvider } from "../context/UserContext";
+import Test from "../pages/Test";
 
 function App() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
                 <Route path="/quiz/:id" element={<Quiz />} />
                 <Route path="/result/:id" element={<Result />} />
                 <Route path="/tutorials" element={<Tutorials />} />
+                <Route path="/test" element={<Test />} />
                 <Route path="/profile" element={<Profile />} />
               </Route>
               <Route path="/faculties" element={<Faculties />} />

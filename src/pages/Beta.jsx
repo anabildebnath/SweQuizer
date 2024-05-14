@@ -1,32 +1,31 @@
-// "use client";
-// // Import TypewriterEffect component from correct path
-// import { TypewriterEffect } from "../components/ui/typewriter-effect";
-
-
-// Define an array of words for the typewriter effect
-// const words = [
-//   { text: "Currently on beta mode," },
-//   { text: "still working on this feature," },
-//   { text: "will be updated soon." }
-// ];
-
+import classes from "../styles/Beta.module.css";
+import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 export default function Beta() {
+  const [showSecondDiv, setShowSecondDiv] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSecondDiv(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: "90vh",
-        overflow:"hidden"
-      }}
-    >
-      {/* Pass the array of words as props to the TypewriterEffect component */}
-      {/* <TypewriterEffect words={words} /> */}
-      <h1 style={{ color: "black" }}>
-        Currently on beta mode, still working on this feature, soon will be
-        updated.
-      </h1>
+    <div className={classes.beta}>
+      <div className={classes.container}>
+        <div className={classes.typedOut}>
+          <h1> Currently on BETA mode, working on upgrading this feature.</h1>
+        </div>
+      </div>
+
+      {showSecondDiv && (
+        <div className={classes.container}>
+          <div className={classes.typedOut}>
+            <h1>Checkout my github for updates: <Link to="https://github.com/anabildebnath/SweQuizer/commits/master/" target="_blank">SweQuizer</Link></h1>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
